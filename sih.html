@@ -226,6 +226,29 @@
             <li><strong>Export Infrastructure:</strong> Developing the necessary infrastructure, such as export hubs and specialized storage facilities, to support the seamless movement of agricultural goods from farm to foreign markets.</li>
         </ul>
     </section>
+    <script>
+        function redirectToPage() {
+            const language = document.getElementById("suppliesPrices").value;
+            if (language !== "") {
+                window.location.href = language;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="supplies-prices">
+        <h1>Farming Supplies Prices</h1>
+        <br>
+        <select id="suppliesPrices">
+            <option value="">Select a page</option>
+            <option value="Price of fertilizers.html">Price of Different Farming Products</option>
+            <option value="price of seeds.html">Price of Seeds</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button onclick="redirectToPage()">Go</button>
+    </div>
+    
+    </body>    
 
     <footer>
         <p>&copy; 2024 Agriculture Solutions | Enhancing India's Agriculture Sector</p>

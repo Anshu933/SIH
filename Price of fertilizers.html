@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Supplies Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #36ae06;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        main {
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #06850a;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farming Supplies Prices</h1>
+    </header>
+    <main>
+        <section id="pesticides">
+            <h2>Pesticides</h2>
+            <ul id="pesticide-list"></ul>
+        </section>
+
+        <section id="seeds">
+            <h2>Seeds</h2>
+            <ul id="seed-list"></ul>
+        </section>
+
+        <section id="fertilizers">
+            <h2>Fertilizers</h2>
+            <ul id="fertilizer-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Farming Supplies. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pesticides = [
+                { brand: 'Bayer CropScience ', price: 'Rs 487' },
+                { brand: 'Rails India Ltd', price: 'Rs 270' },
+                { brand: 'BASF India Ltd', price: 'Rs 759' }
+            ];
+
+            const seeds = [
+                { brand: 'Seeds Shine-210 Mustard', price: 'Rs 671' },
+                { brand: 'Vegetable & Fruit Seeds', price: 'Rs 129' },
+                { brand: 'Organic winter & summer Seeds', price: 'Rs 220' }
+            ];
+
+            const fertilizers = [
+                { brand: 'Coromandel International', price: 'rs 750/kg' },
+                { brand: 'Chambel fertilizers', price: 'Rs 610/kg' },
+                { brand: 'Deepak fertilizers', price: 'Rs 795/kg' }
+            ];
+
+            const populateList = (items, elementId) => {
+                const listElement = document.getElementById(elementId);
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.brand}: ${item.price}`;
+                    listElement.appendChild(li);
+                });
+            };
+
+            populateList(pesticides, 'pesticide-list');
+            populateList(seeds, 'seed-list');
+            populateList(fertilizers, 'fertilizer-list');
+        });
+    </script>
+</body>
+</html>
